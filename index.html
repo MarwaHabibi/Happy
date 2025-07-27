@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="birthday-container">
+    <div id="message-box" class="message-box">
+      <p id="typing-text" class="typing-text"></p>
+    </div>
+
+    <div id="voice-page" class="voice-page" style="display:none; text-align:center;">
+      <h2>Playing Voice Message...😊</h2>
+      <audio controls id="voice-audio" style="margin-top: 20px; width: 100%;">
+        <source src="1.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div id="gallery-section" class="gallery-section" style="display:none;">
+      <div class="background-stickers">
+        <span class="sticker balloon">🎈</span>
+        <span class="sticker cake">🎂</span>
+        <span class="sticker balloon">🎈</span>
+        <span class="sticker cake">🎂</span>
+      </div>
+
+      <h2>✨❤️Happy Birthday Hadya My Best Teacher🎈💫</h2>
+      <div class="image-grid" id="image-grid">
+      </div>
+      <div class="final-message">
+        <p>
+          Hadya dear ❤️🤍, Today is your day—the day the world was blessed with
+          its most beautiful gift: you. You are not just a teacher, but a
+          kindred spirit, a companion, and the sister of my heart—someone
+          whose presence brings calm and light to my soul. I pray that your
+          life overflows with joy, love, and endless blessings.🎊🎉🎁
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

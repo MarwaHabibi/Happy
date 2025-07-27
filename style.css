@@ -1,0 +1,191 @@
+/* 💻 دسکتاپ — مرکزچینی کامل بدون اسکرول */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-align: center;
+  overflow: hidden; /* جلوگیری از اسکرول در دسکتاپ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* کانتینر اصلی */
+.birthday-container {
+  padding: 2rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+
+/* تمام باکس‌ها */
+.message-box,
+.voice-page,
+.final-message {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+  animation: fadeIn 1s ease-in;
+  background-color: #ffe0ec;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 600px;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+.voice-page {
+  background-color: #fff0f5;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.25);
+}
+
+.final-message {
+  background-color: #fef6fb;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.2);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* تایپ متن */
+.typing-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* گالری */
+.gallery-section {
+  margin-top: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+.memory-photo {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* استیکرهای شناور */
+.background-stickers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sticker {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.5;
+  animation: float 10s linear infinite;
+}
+
+.sticker:nth-child(odd) { left: 5%; }
+.sticker:nth-child(even) { right: 5%; }
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+
+/* 📱 موبایل — فعال‌سازی اسکرول در صورت نیاز */
+@media (max-width: 600px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow-y: auto; /* فقط در موبایل اجازه اسکرول بده */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .birthday-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .message-box,
+  .voice-page,
+  .final-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .memory-photo {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .typing-text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  audio {
+    width: 90%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+}
+
